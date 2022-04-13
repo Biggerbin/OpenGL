@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36585A4327FDE83E00B8BC49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36585A4227FDE83E00B8BC49 /* main.cpp */; };
+		3645549E28007F180008FE78 /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3645549A280042260008FE78 /* libGLEW.2.2.0.dylib */; };
+		3645549F28007F260008FE78 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36585A5327FDFA3400B8BC49 /* libglfw.3.3.dylib */; };
+		364554A028007F3F0008FE78 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36585A4D27FDF66400B8BC49 /* OpenGL.framework */; };
+		36585A4B27FDE89D00B8BC49 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36585A4A27FDE89D00B8BC49 /* Application.cpp */; };
+		367B2FFD2806FCEC0029C76F /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B2FFB2806FCEC0029C76F /* Renderer.cpp */; };
+		367B30002806FDB60029C76F /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B2FFE2806FDB60029C76F /* VertexBuffer.cpp */; };
+		367B3003280702D00029C76F /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B3002280702D00029C76F /* IndexBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +29,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3645549A280042260008FE78 /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
 		36585A3F27FDE83E00B8BC49 /* OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
-		36585A4227FDE83E00B8BC49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		36585A4A27FDE89D00B8BC49 /* Application.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		36585A4D27FDF66400B8BC49 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		36585A4F27FDF7A500B8BC49 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		36585A5127FDFA2500B8BC49 /* OpenGL_Object */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OpenGL_Object; path = ..; sourceTree = "<group>"; };
+		36585A5327FDFA3400B8BC49 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		367B2FFB2806FCEC0029C76F /* Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
+		367B2FFC2806FCEC0029C76F /* Renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
+		367B2FFE2806FDB60029C76F /* VertexBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexBuffer.cpp; sourceTree = "<group>"; };
+		367B2FFF2806FDB60029C76F /* VertexBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexBuffer.hpp; sourceTree = "<group>"; };
+		367B3001280702D00029C76F /* IndexBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IndexBuffer.hpp; sourceTree = "<group>"; };
+		367B3002280702D00029C76F /* IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexBuffer.cpp; sourceTree = "<group>"; };
+		36843B25280327E60064D55A /* Basic.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = Basic.shader; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364554A028007F3F0008FE78 /* OpenGL.framework in Frameworks */,
+				3645549F28007F260008FE78 /* libglfw.3.3.dylib in Frameworks */,
+				3645549E28007F180008FE78 /* libGLEW.2.2.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +64,7 @@
 			children = (
 				36585A4127FDE83E00B8BC49 /* OpenGL */,
 				36585A4027FDE83E00B8BC49 /* Products */,
+				36585A4C27FDF66300B8BC49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +79,52 @@
 		36585A4127FDE83E00B8BC49 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				36585A4227FDE83E00B8BC49 /* main.cpp */,
+				36843B1F28031C1E0064D55A /* res */,
+				36585A4927FDE87600B8BC49 /* src */,
 			);
 			path = OpenGL;
+			sourceTree = "<group>";
+		};
+		36585A4927FDE87600B8BC49 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				367B3002280702D00029C76F /* IndexBuffer.cpp */,
+				367B3001280702D00029C76F /* IndexBuffer.hpp */,
+				36585A4A27FDE89D00B8BC49 /* Application.cpp */,
+				367B2FFB2806FCEC0029C76F /* Renderer.cpp */,
+				367B2FFC2806FCEC0029C76F /* Renderer.hpp */,
+				367B2FFE2806FDB60029C76F /* VertexBuffer.cpp */,
+				367B2FFF2806FDB60029C76F /* VertexBuffer.hpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		36585A4C27FDF66300B8BC49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3645549A280042260008FE78 /* libGLEW.2.2.0.dylib */,
+				36585A5327FDFA3400B8BC49 /* libglfw.3.3.dylib */,
+				36585A5127FDFA2500B8BC49 /* OpenGL_Object */,
+				36585A4F27FDF7A500B8BC49 /* GLUT.framework */,
+				36585A4D27FDF66400B8BC49 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36843B1F28031C1E0064D55A /* res */ = {
+			isa = PBXGroup;
+			children = (
+				36843B2028031C270064D55A /* shaders */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		36843B2028031C270064D55A /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				36843B25280327E60064D55A /* Basic.shader */,
+			);
+			path = shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36585A4327FDE83E00B8BC49 /* main.cpp in Sources */,
+				367B2FFD2806FCEC0029C76F /* Renderer.cpp in Sources */,
+				36585A4B27FDE89D00B8BC49 /* Application.cpp in Sources */,
+				367B3003280702D00029C76F /* IndexBuffer.cpp in Sources */,
+				367B30002806FDB60029C76F /* VertexBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +249,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -232,6 +301,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -239,6 +309,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					/usr/local/bin,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/glew/2.2.0_1/include,
+					/usr/local/Cellar/glfw/3.3.6/include,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/glew/2.2.0_1/lib,
+					/usr/local/Cellar/glfw/3.3.6/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +330,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					usr/local/bin,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/glew/2.2.0_1/include/,
+					/usr/local/Cellar/glfw/3.3.6/include/,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/usr/local/Cellar/glfw/3.3.6/lib/,
+					/usr/local/Cellar/glew/2.2.0_1/lib/,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
