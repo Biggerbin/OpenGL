@@ -11,9 +11,10 @@
 #include <GLFW/glfw3.h>
 #include <fstream>
 #include <sstream>
-#include "renderer.hpp"
+#include "Renderer.hpp"
 #include "IndexBuffer.hpp"
 #include "VertexBuffer.hpp"
+#include "VertexArray.hpp"
 
 struct ShaderProgramSource{
     std::string VertexSource;
@@ -87,7 +88,6 @@ static unsigned int CreateShader(const std::string& vertexShader, const std::str
 
 int main(void)
 {
-
     /* Initialize the library */
     if (!glfwInit())
         return -1;
@@ -129,25 +129,22 @@ int main(void)
             2, 3, 0
         };
         
-        unsigned int vao;
-        GLCaLL(glGenVertexArrays(1, &vao));
-        GLCaLL(glBindVertexArray(vao));
-        
+        VertexBufferLayout layout;
+        layout.Push<float>(2);
+        VertexArray va;
         VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+        va.AddBuffer(vb, layout);
         IndexBuffer ib(indices, 6);
-        
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
-
         
         ShaderProgramSource source = ParseShader("/Users/zhaozhaoanan/Documents/OpenGL_Object/OpenGL/OpenGL/res/shaders/Basic.shader");
         unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
         glUseProgram(shader);
         
-        GLCaLL(glBindVertexArray(0));
+        va.unBind();
+        vb.unBind();
+        ib.unBind();
         GLCaLL(glUseProgram(0));
-        GLCaLL(glBindBuffer(GL_ARRAY_BUFFER, 0));
-        GLCaLL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
+        
         
         int location = glGetUniformLocation(shader, "u_Color");
         
@@ -163,7 +160,7 @@ int main(void)
             glUniform4f(location, r, 0.5f, 0.1f, 1.0f);
             
             GLCaLL(glUseProgram(shader));
-            GLCaLL(glBindVertexArray(vao));
+            va.Bind();
             ib.Bind();
             
             GLCaLL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL));

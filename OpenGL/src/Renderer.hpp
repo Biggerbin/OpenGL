@@ -5,8 +5,7 @@
 //  Created by 赵赵安安 on 2022/4/13.
 //
 
-#ifndef Renderer_hpp
-#define Renderer_hpp
+#pragma once
 
 #include <GL/glew.h>
 #include <iostream>
@@ -21,6 +20,3 @@ bool GLLogCall(const char* function, const char* file, const int line);
 
 
 
-
-
-#endif /* Renderer_hpp */

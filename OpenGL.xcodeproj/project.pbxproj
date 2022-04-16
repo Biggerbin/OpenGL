@@ -14,6 +14,8 @@
 		367B2FFD2806FCEC0029C76F /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B2FFB2806FCEC0029C76F /* Renderer.cpp */; };
 		367B30002806FDB60029C76F /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B2FFE2806FDB60029C76F /* VertexBuffer.cpp */; };
 		367B3003280702D00029C76F /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B3002280702D00029C76F /* IndexBuffer.cpp */; };
+		36B6D42F280B2B890075AAE5 /* VertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B6D42D280B2B890075AAE5 /* VertexArray.cpp */; };
+		36B6D432280B2BAA0075AAE5 /* VertexBufferLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B6D430280B2BAA0075AAE5 /* VertexBufferLayout.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +45,10 @@
 		367B3001280702D00029C76F /* IndexBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IndexBuffer.hpp; sourceTree = "<group>"; };
 		367B3002280702D00029C76F /* IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexBuffer.cpp; sourceTree = "<group>"; };
 		36843B25280327E60064D55A /* Basic.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = Basic.shader; sourceTree = "<group>"; };
+		36B6D42D280B2B890075AAE5 /* VertexArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexArray.cpp; sourceTree = "<group>"; };
+		36B6D42E280B2B890075AAE5 /* VertexArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexArray.hpp; sourceTree = "<group>"; };
+		36B6D430280B2BAA0075AAE5 /* VertexBufferLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexBufferLayout.cpp; sourceTree = "<group>"; };
+		36B6D431280B2BAA0075AAE5 /* VertexBufferLayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexBufferLayout.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,10 @@
 				367B2FFC2806FCEC0029C76F /* Renderer.hpp */,
 				367B2FFE2806FDB60029C76F /* VertexBuffer.cpp */,
 				367B2FFF2806FDB60029C76F /* VertexBuffer.hpp */,
+				36B6D42D280B2B890075AAE5 /* VertexArray.cpp */,
+				36B6D42E280B2B890075AAE5 /* VertexArray.hpp */,
+				36B6D430280B2BAA0075AAE5 /* VertexBufferLayout.cpp */,
+				36B6D431280B2BAA0075AAE5 /* VertexBufferLayout.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -185,8 +195,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				367B2FFD2806FCEC0029C76F /* Renderer.cpp in Sources */,
+				36B6D432280B2BAA0075AAE5 /* VertexBufferLayout.cpp in Sources */,
 				36585A4B27FDE89D00B8BC49 /* Application.cpp in Sources */,
 				367B3003280702D00029C76F /* IndexBuffer.cpp in Sources */,
+				36B6D42F280B2B890075AAE5 /* VertexArray.cpp in Sources */,
 				367B30002806FDB60029C76F /* VertexBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

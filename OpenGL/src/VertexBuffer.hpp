@@ -16,5 +16,5 @@ public:
     ~VertexBuffer();
     
     void Bind() const;
-    void unBinde() const;
+    void unBind() const;
 };
