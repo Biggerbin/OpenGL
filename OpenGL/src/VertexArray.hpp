@@ -8,7 +8,8 @@
 #pragma once
 
 #include "VertexBuffer.hpp"
-#include "VertexBufferLayout.hpp"
+
+class VertexBufferLayout;
 
 class VertexArray{
 private:

@@ -7,6 +7,7 @@
 
 #include "VertexArray.hpp"
 #include "Renderer.hpp"
+#include "VertexBufferLayout.hpp"
 
 void VertexArray::AddBuffer(const VertexBuffer &vb, const VertexBufferLayout &layout) {
     Bind();
