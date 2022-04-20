@@ -17,6 +17,7 @@
 #include "VertexArray.hpp"
 #include "Shader.hpp"
 #include "VertexBufferLayout.hpp"
+#include "Texture.hpp"
 
 int main(void)
 {
@@ -48,12 +49,10 @@ int main(void)
     glViewport(0, 0, width, height);
     {
         float positions[] = {
-             -0.5f, -0.5f,
-              0.5f, -0.5f,
-              0.5f,  0.5f,
-             -0.5f,  0.5f
-            
-            
+             -0.5f, -0.5f, 0.0f, 0.0f,
+              0.5f, -0.5f, 1.0f, 0.0f,
+              0.5f,  0.5f, 1.0f, 1.0f,
+             -0.5f,  0.5f, 0.0f, 1.0f
         };
         
         unsigned int indices[] = {
@@ -61,16 +60,25 @@ int main(void)
             2, 3, 0
         };
         
+        GLCaLL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+        GLCaLL(glEnable(GL_BLEND));
+        
         VertexBufferLayout layout;
         layout.Push<float>(2);
+        layout.Push<float>(2);
         VertexArray va;
-        VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+        VertexBuffer vb(positions, 4 * 4 * sizeof(float));
         va.AddBuffer(vb, layout);
         IndexBuffer ib(indices, 6);
         
         Shader shader("/Users/zhaozhaoanan/Documents/OpenGL_Object/OpenGL/OpenGL/res/shaders/Basic.shader");
         shader.Bind();
-        shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+        //shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+        
+        Texture texture("/Users/zhaozhaoanan/Desktop/img.png");
+        texture.Bind();
+        shader.SetUniform1i("u_Texture", 0);
+        
         
         va.unBind();
         vb.unBind();
@@ -87,7 +95,7 @@ int main(void)
             renderer.Clear();
             
             shader.Bind();
-            shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
+            //shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f);
             renderer.Draw(va, ib, shader);
             
             if(r > 1.0f){

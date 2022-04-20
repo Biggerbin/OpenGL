@@ -15,6 +15,8 @@
 		367B30002806FDB60029C76F /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B2FFE2806FDB60029C76F /* VertexBuffer.cpp */; };
 		367B3003280702D00029C76F /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367B3002280702D00029C76F /* IndexBuffer.cpp */; };
 		368D9B25280C794E00F84E42 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 368D9B23280C794E00F84E42 /* Shader.cpp */; };
+		368D9B3D281045E000F84E42 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 368D9B3C281045E000F84E42 /* stb_image.cpp */; };
+		368D9B412810469700F84E42 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 368D9B3F2810469700F84E42 /* Texture.cpp */; };
 		36B6D42F280B2B890075AAE5 /* VertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B6D42D280B2B890075AAE5 /* VertexArray.cpp */; };
 		36B6D432280B2BAA0075AAE5 /* VertexBufferLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B6D430280B2BAA0075AAE5 /* VertexBufferLayout.cpp */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,10 @@
 		36843B25280327E60064D55A /* Basic.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = Basic.shader; sourceTree = "<group>"; };
 		368D9B23280C794E00F84E42 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		368D9B24280C794E00F84E42 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		368D9B3B281044CF00F84E42 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		368D9B3C281045E000F84E42 /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
+		368D9B3F2810469700F84E42 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		368D9B402810469700F84E42 /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		36B6D42D280B2B890075AAE5 /* VertexArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexArray.cpp; sourceTree = "<group>"; };
 		36B6D42E280B2B890075AAE5 /* VertexArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexArray.hpp; sourceTree = "<group>"; };
 		36B6D430280B2BAA0075AAE5 /* VertexBufferLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexBufferLayout.cpp; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		36585A4927FDE87600B8BC49 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				368D9B392810447A00F84E42 /* vendor */,
 				367B3002280702D00029C76F /* IndexBuffer.cpp */,
 				367B3001280702D00029C76F /* IndexBuffer.hpp */,
 				36585A4A27FDE89D00B8BC49 /* Application.cpp */,
@@ -110,6 +117,8 @@
 				36B6D431280B2BAA0075AAE5 /* VertexBufferLayout.hpp */,
 				368D9B23280C794E00F84E42 /* Shader.cpp */,
 				368D9B24280C794E00F84E42 /* Shader.hpp */,
+				368D9B3F2810469700F84E42 /* Texture.cpp */,
+				368D9B402810469700F84E42 /* Texture.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -140,6 +149,23 @@
 				36843B25280327E60064D55A /* Basic.shader */,
 			);
 			path = shaders;
+			sourceTree = "<group>";
+		};
+		368D9B392810447A00F84E42 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				368D9B3A2810448D00F84E42 /* stb_image */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		368D9B3A2810448D00F84E42 /* stb_image */ = {
+			isa = PBXGroup;
+			children = (
+				368D9B3B281044CF00F84E42 /* stb_image.h */,
+				368D9B3C281045E000F84E42 /* stb_image.cpp */,
+			);
+			path = stb_image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				367B2FFD2806FCEC0029C76F /* Renderer.cpp in Sources */,
+				368D9B3D281045E000F84E42 /* stb_image.cpp in Sources */,
 				36B6D432280B2BAA0075AAE5 /* VertexBufferLayout.cpp in Sources */,
+				368D9B412810469700F84E42 /* Texture.cpp in Sources */,
 				36585A4B27FDE89D00B8BC49 /* Application.cpp in Sources */,
 				367B3003280702D00029C76F /* IndexBuffer.cpp in Sources */,
 				368D9B25280C794E00F84E42 /* Shader.cpp in Sources */,
