@@ -18,6 +18,8 @@
 #include "Shader.hpp"
 #include "VertexBufferLayout.hpp"
 #include "Texture.hpp"
+#include "vendor/glm/glm.hpp"
+#include "vendor/glm/gtc/matrix_transform.hpp"
 
 int main(void)
 {
@@ -71,10 +73,12 @@ int main(void)
         va.AddBuffer(vb, layout);
         IndexBuffer ib(indices, 6);
         
+        glm::mat4 proj = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
+        
         Shader shader("/Users/zhaozhaoanan/Documents/OpenGL_Object/OpenGL/OpenGL/res/shaders/Basic.shader");
         shader.Bind();
         //shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
-        
+        shader.SetUniformMat4f("u_MVP", proj);
         Texture texture("/Users/zhaozhaoanan/Desktop/img.png");
         texture.Bind();
         shader.SetUniform1i("u_Texture", 0);

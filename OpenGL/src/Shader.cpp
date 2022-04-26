@@ -116,6 +116,11 @@ int Shader::GetUniformLocation(const std::string& name) {
     return location;
 }
 
+void Shader::SetUniformMat4f(const std::string &name, glm::mat4& matrix) { 
+    GLCaLL(glUniformMatrix4fv (GetUniformLocation(name), 1, GL_FALSE , &matrix[0][0])); 
+}
+
+
 
 
 
